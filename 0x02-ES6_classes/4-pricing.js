@@ -53,9 +53,10 @@ export default class Pricing {
   }
 
   static convertPrice(amount, conversionRate) {
-    const newAmount = this._validateAmount(amount);
-    const newRate = this._validateAmount(conversionRate);
+    if (typeof amount !== 'number' || typeof conversionRate !== 'number') {
+      throw new TypeError('Both Amount and Conversion Rate must be a Number');
+    }
 
-    return newAmount * newRate;
+    return amount * conversionRate;
   }
 }
