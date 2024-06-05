@@ -3,7 +3,7 @@ export default function createInt8TypedArray(length, position, value) {
     throw new TypeError('Both Length or Position or Value must be a Number');
   }
   const buffer = new ArrayBuffer(length); // create a buffer of length bytes
-  const bufferView = new DataView(buffer);
+  const bufferView = new DataView(buffer); // create data view
 
   try {
     // attempt to set value into postion
