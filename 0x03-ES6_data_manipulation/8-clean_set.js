@@ -10,14 +10,17 @@ export default function cleanSet(set, startString) {
   if (startString.length === 0) {
     return '';
   }
+  // An empty array to store the cleaned values
+  const cleanedValues = [];
 
-  // filter out strings from the set that start with the startString
-  const matchString = Array.from(set).filter((str) => str.startsWith(startString));
-  // extract the rest of the strings after the startString
-  const restOfStr = matchString.map((str) => str.slice(startString.length));
+  // Iterate over each value in the set
+  set.forEach((value) => {
+    if (value.startsWith(startString)) {
+      // extract the substric into the array and also remove the rest part
+      cleanedValues.push(value.slice(startString.length));
+    }
+  });
 
-  // join the rest o fthe strings with the operator '-'
-  const result = restOfStr.join('-');
-
-  return result;
+  // Join the cleaned values with '-' separator and return as a single string
+  return cleanedValues.join('-');
 }
