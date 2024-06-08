@@ -10,7 +10,5 @@
       "skipLibCheck": true,
       "esModuleInterop": true,  // Add this line
       "forceConsistentCasingInFileNames": true,
-      "rootDir": "./src"
     },
-      "include": ["src", "js"]
   }

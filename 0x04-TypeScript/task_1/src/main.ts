@@ -7,9 +7,9 @@ interface Teacher {
   [key: string]: any; // Allow for additional properties
 };
 
-
 // TEST
-const teacher5: Teacher = {
+
+const teacher3: Teacher = {
   firstName: 'John',
   fullTimeEmployee: false,
   lastName: 'Doe',
